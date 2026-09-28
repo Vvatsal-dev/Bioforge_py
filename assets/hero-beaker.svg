@@ -1,0 +1,262 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Background glow -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#0d9488" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#00685f" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Glass Flask Gradient -->
+    <linearGradient id="glassBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="15%" stop-color="#ecfdf5" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#ccfbf1" stop-opacity="0.4"/>
+      <stop offset="85%" stop-color="#a7f3d0" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#5eead4" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <!-- Glass Rim & Lip -->
+    <linearGradient id="rimGrad" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#99f6e4" stop-opacity="0.9"/>
+      <stop offset="25%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="70%" stop-color="#5eead4" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0f766e" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <!-- Liquid Gradient inside Flask -->
+    <linearGradient id="liquidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5eead4"/>
+      <stop offset="25%" stop-color="#34d399"/>
+      <stop offset="75%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+
+    <!-- Liquid Top Surface / Meniscus -->
+    <linearGradient id="liquidTopGrad" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#6ee7b7"/>
+      <stop offset="50%" stop-color="#a7f3d0"/>
+      <stop offset="100%" stop-color="#2dd4bf"/>
+    </linearGradient>
+
+    <!-- 3D Specular Highlight (Left) -->
+    <linearGradient id="specularLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85"/>
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- 3D Specular Highlight (Right) -->
+    <linearGradient id="specularRight" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Shadow under base -->
+    <radialGradient id="dropShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0f172a" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#0f172a" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Eye Catchlight Gradient -->
+    <radialGradient id="eyePupil" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="85%" stop-color="#0b1329"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </radialGradient>
+
+    <!-- Bubble Glow -->
+    <radialGradient id="bubbleGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#a7f3d0" stop-opacity="0.75"/>
+      <stop offset="90%" stop-color="#34d399" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#0d9488" stop-opacity="0.2"/>
+    </radialGradient>
+
+    <!-- Cheeks Glow -->
+    <radialGradient id="cheekGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fb7185" stop-opacity="0.6"/>
+      <stop offset="60%" stop-color="#fb7185" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#fb7185" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Filters for Depth -->
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="shadowFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="12" flood-color="#042f2e" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient Glow Behind Beaker -->
+  <circle cx="250" cy="270" r="180" fill="url(#bgGlow)"/>
+
+  <!-- Base Soft Cast Shadow -->
+  <ellipse cx="250" cy="452" rx="140" ry="24" fill="url(#dropShadow)"/>
+
+  <!-- Flask Group with Drop Shadow -->
+  <g filter="url(#shadowFilter)">
+    <!-- Outer Glass Flask Body Back/Silhouette -->
+    <!-- Neck: x=205 to 295, y=90 to 180. Base slopes out to x=105 to 395 at y=410, rounded bottom to y=435 -->
+    <path d="M 210,95
+             L 290,95
+             C 294,95 296,98 296,105
+             L 294,180
+             C 294,195 302,210 312,225
+             L 386,345
+             C 404,374 402,410 380,425
+             C 355,442 145,442 120,425
+             C 98,410 96,374 114,345
+             L 188,225
+             C 198,210 206,195 206,180
+             L 204,105
+             C 204,98 206,95 210,95 Z"
+          fill="url(#glassBody)"
+          stroke="#5eead4"
+          stroke-width="4"
+          stroke-linejoin="round"/>
+
+    <!-- Inside Liquid Volume (filled to around y=240) -->
+    <g id="liquidContainer">
+      <!-- Main Liquid Fill -->
+      <path d="M 178,245
+               C 210,252 290,252 322,245
+               L 378,348
+               C 396,376 394,408 374,422
+               C 350,438 150,438 126,422
+               C 106,408 104,376 122,348
+               Z"
+            fill="url(#liquidGrad)"/>
+
+      <!-- Liquid Meniscus (Curved Surface with 3D elliptical depth) -->
+      <ellipse cx="250" cy="245" rx="72" ry="14" fill="url(#liquidTopGrad)"/>
+      <ellipse cx="250" cy="245" rx="64" ry="9" fill="#a7f3d0" opacity="0.6"/>
+
+      <!-- Deep Liquid Glow / Internal Caustics -->
+      <path d="M 145,395
+               C 180,425 320,425 355,395
+               C 320,412 180,412 145,395 Z"
+            fill="#ffffff"
+            opacity="0.35"/>
+
+      <!-- Internal Floating Rising Bubbles -->
+      <circle cx="210" cy="370" r="10" fill="url(#bubbleGrad)"/>
+      <circle cx="212" cy="368" r="3" fill="#ffffff" opacity="0.8"/>
+
+      <circle cx="295" cy="350" r="14" fill="url(#bubbleGrad)"/>
+      <circle cx="298" cy="347" r="4" fill="#ffffff" opacity="0.85"/>
+
+      <circle cx="240" cy="320" r="8" fill="url(#bubbleGrad)"/>
+      <circle cx="242" cy="318" r="2.5" fill="#ffffff" opacity="0.8"/>
+
+      <circle cx="185" cy="305" r="12" fill="url(#bubbleGrad)"/>
+      <circle cx="188" cy="302" r="3.5" fill="#ffffff" opacity="0.8"/>
+
+      <circle cx="310" cy="285" r="7" fill="url(#bubbleGrad)"/>
+      <circle cx="265" cy="265" r="9" fill="url(#bubbleGrad)"/>
+
+      <!-- Friendly Character Face inside the Liquid/Flask -->
+      <!-- Left Eye -->
+      <g transform="translate(205, 330)">
+        <ellipse cx="0" cy="0" rx="14" ry="18" fill="url(#eyePupil)"/>
+        <!-- Catchlight Sparkle Major -->
+        <ellipse cx="-4" cy="-6" rx="5" ry="7" fill="#ffffff" transform="rotate(-15)"/>
+        <!-- Catchlight Minor -->
+        <circle cx="5" cy="6" r="3" fill="#ffffff" opacity="0.9"/>
+      </g>
+
+      <!-- Right Eye -->
+      <g transform="translate(295, 330)">
+        <ellipse cx="0" cy="0" rx="14" ry="18" fill="url(#eyePupil)"/>
+        <!-- Catchlight Sparkle Major -->
+        <ellipse cx="-4" cy="-6" rx="5" ry="7" fill="#ffffff" transform="rotate(-15)"/>
+        <!-- Catchlight Minor -->
+        <circle cx="5" cy="6" r="3" fill="#ffffff" opacity="0.9"/>
+      </g>
+
+      <!-- Cute Blushing Cheeks -->
+      <ellipse cx="182" cy="348" rx="14" ry="8" fill="url(#cheekGlow)"/>
+      <ellipse cx="318" cy="348" rx="14" ry="8" fill="url(#cheekGlow)"/>
+
+      <!-- Happy Smile -->
+      <path d="M 232,348 Q 250,366 268,348"
+            fill="none"
+            stroke="#064e3b"
+            stroke-width="4.5"
+            stroke-linecap="round"/>
+
+      <!-- Subtle Tongue inside Smile -->
+      <path d="M 243,356 C 245,363 255,363 257,356 Z"
+            fill="#fb7185"
+            opacity="0.85"/>
+    </g>
+
+    <!-- Graduated Measurement Ticks on Glass Front (White Translucent Ticks) -->
+    <g opacity="0.65" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round">
+      <line x1="180" y1="280" x2="204" y2="280"/>
+      <line x1="172" y1="315" x2="192" y2="315"/>
+      <line x1="162" y1="350" x2="182" y2="350"/>
+      <line x1="150" y1="385" x2="178" y2="385"/>
+    </g>
+
+    <!-- Left Long Curved 3D Specular Highlight Ribbon -->
+    <path d="M 214,105
+             L 214,180
+             C 214,195 204,212 196,226
+             L 128,345
+             C 114,370 115,398 132,414
+             C 120,402 118,375 133,350
+             L 202,230
+             C 210,214 218,198 218,180
+             L 218,105 Z"
+          fill="url(#specularLeft)"/>
+
+    <!-- Right Rim Specular Glare -->
+    <path d="M 286,105
+             L 286,180
+             C 286,198 294,214 302,230
+             L 370,350
+             C 382,370 382,398 368,414
+             C 384,398 384,370 372,348
+             L 304,228
+             C 296,212 288,195 288,180
+             L 288,105 Z"
+          fill="url(#specularRight)"/>
+
+    <!-- Thick Molded Glass Collar Rim (Top Lip) -->
+    <ellipse cx="250" cy="95" rx="46" ry="12" fill="url(#rimGrad)" stroke="#2dd4bf" stroke-width="3"/>
+    <ellipse cx="250" cy="95" rx="36" ry="8" fill="#042f2e" opacity="0.35"/>
+    <!-- Top inner hole highlight -->
+    <ellipse cx="250" cy="93" rx="34" ry="6" fill="#ccfbf1" opacity="0.5"/>
+  </g>
+
+  <!-- Floating Active Bubbles escaping the top -->
+  <g>
+    <!-- Bubble 1 -->
+    <circle cx="235" cy="62" r="10" fill="url(#bubbleGrad)" filter="url(#softGlow)"/>
+    <circle cx="237" cy="60" r="3" fill="#ffffff"/>
+
+    <!-- Bubble 2 -->
+    <circle cx="270" cy="40" r="14" fill="url(#bubbleGrad)" filter="url(#softGlow)"/>
+    <circle cx="273" cy="37" r="4.5" fill="#ffffff"/>
+
+    <!-- Bubble 3 -->
+    <circle cx="220" cy="25" r="7" fill="url(#bubbleGrad)"/>
+    <circle cx="222" cy="23" r="2" fill="#ffffff"/>
+
+    <!-- Sparkle / Kinetic Star (Upper Right) -->
+    <path d="M 370,160 Q 370,180 390,180 Q 370,180 370,200 Q 370,180 350,180 Q 370,180 370,160 Z"
+          fill="#34d399"
+          opacity="0.85"
+          filter="url(#softGlow)"/>
+    <circle cx="370" cy="180" r="3" fill="#ffffff"/>
+
+    <!-- Sparkle Minor (Upper Left) -->
+    <path d="M 120,210 Q 120,222 132,222 Q 120,222 120,234 Q 120,222 108,222 Q 120,222 120,210 Z"
+          fill="#5eead4"
+          opacity="0.8"/>
+  </g>
+</svg>
