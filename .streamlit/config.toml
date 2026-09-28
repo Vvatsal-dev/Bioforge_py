@@ -1,0 +1,40 @@
+# BioForge visual identity for Streamlit (light + dark themes).
+# Switch between them from the app's  ⋮  menu  ->  Settings  ->  Theme.
+
+[theme]
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap, sans-serif"
+headingFont = "'Plus Jakarta Sans':https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap, sans-serif"
+headingFontWeights = [700, 700, 600, 600, 600, 600]
+baseRadius = "0.75rem"
+buttonRadius = "0.6rem"
+showWidgetBorder = true
+
+[theme.light]
+primaryColor = "#00685F"
+backgroundColor = "#F8F9FF"
+secondaryBackgroundColor = "#EFF4FF"
+textColor = "#0B1C30"
+borderColor = "#D3DEE8"
+greenColor = "#059669"
+blueColor = "#006194"
+redColor = "#BA1A1A"
+linkColor = "#00685F"
+chartCategoricalColors = ["#047857", "#2A78D6", "#EB6834", "#EDA100", "#E87BA4", "#4A3AA7", "#E34948", "#1BAF7A"]
+
+[theme.dark]
+primaryColor = "#10B981"
+backgroundColor = "#0B1220"
+secondaryBackgroundColor = "#152033"
+textColor = "#F1F5F9"
+borderColor = "#283548"
+greenColor = "#34D399"
+blueColor = "#38BDF8"
+redColor = "#F87171"
+linkColor = "#34D399"
+chartCategoricalColors = ["#10A377", "#3987E5", "#D95926", "#C98500", "#D55181", "#9085E9", "#E66767", "#199E70"]
+
+[client]
+toolbarMode = "minimal"
+
+[browser]
+gatherUsageStats = false
